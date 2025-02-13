@@ -5,98 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLS ANSWER</title>
     <style>
-        .background {
-            width: 75%;
-            height: 90vh;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {color:rgb(204, 32, 149);
-            position: absolute;
-            top: 100px;
-            left: 340px}
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 99vh;
+            height: 100vh;
             background: linear-gradient(to right, #ffdde1, #71045b);
-            overflow: hidden ;
-            }
-        .yesb{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            
+            overflow: hidden;
+            text-align: center;
         }
-        .yes{
-            cursor: pointer;
-            position: absolute;
-            left:300px;
-            bottom: 100px;  
-            width: 100px;
-            font-size:10vw
+
+        .background {
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
         }
-        .no{
+
+        h1 {
+            color: rgb(204, 32, 149);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .test {
+            width: 70%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button {
             cursor: pointer;
-            position: absolute;
-            right:300px;
-            bottom: 100px; 
-            width: 100px;
-        } 
-        .heart{
+            background-color: crimson;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+
+        .heart {
             position: fixed;
-            color:pink
-            font-size _ 1.5rem;
+            color: pink;
+            font-size: 1.5rem;
             animation: fall 3s linear forwards;
         }
-        @keyframes fall{
-            to{
+
+        @keyframes fall {
+            to {
                 transform: translateY(105vh);
             }
         }
-     
 
     </style>
 </head>
 <body>
     
-    <div class= "background"> 
-        <div class = "heart">
-
-        </div>
-        <div class = "question">
-            <h1>Pls go on a date with me uwu</h1>
-        </div>
-            <img class="test" src ="testoda.jpg" alt="testlang" width="200px">
-        <div class="yesb">
-            <a href ="YEY.html">
-            <button class="yes" style="background-color: crimson; font-size: 24px;">YES</button>
+    <div class="background">
+        <h1>Pls go on a date with me uwu</h1>
+        <img class="test" src="testoda.jpg" alt="testlang">
+        
+        <div class="buttons">
+            <a href="YEY.html">
+                <button class="yes">YES</button>
             </a>
-        </div>
-        <div class="nob">
             <a href="NO.html">
-            <button class="no" style="background-color: crimson; font-size: 24px;">NO</button>
+                <button class="no">NO</button>
             </a>
         </div>
     </div>
+
     <script>
-      const heartCreate = () => {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.innerText = "🩷"
-        heart.style.left = Math.random() *
-        100 + "vw";
-        heart.style.animationDuration = Math.random() * 2+3+"s";
-        
-        document.body.appendChild(heart);
-      }
-      setInterval(heartCreate,300)
+        const heartCreate = () => {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerText = "🩷";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        };
+
+        setInterval(heartCreate, 300);
     </script>
 
 </body>
